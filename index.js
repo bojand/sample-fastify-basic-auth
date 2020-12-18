@@ -2,7 +2,10 @@
 const fastify = require('fastify')({ logger: true })
 
 const authenticate = { realm: 'Westeros' }
+const port = process.env.PORT || 3000
+
 fastify.register(require('fastify-basic-auth'), { validate, authenticate })
+
 async function validate (username, password, req, reply) {
   if (username !== 'Tyrion' || password !== 'wine') {
     return new Error('Winter is coming')
