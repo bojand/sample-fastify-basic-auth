@@ -1,5 +1,4 @@
 name: sample-fastify-basic-auth
-region: nyc
 services:
 - environment_slug: node-js
   github:
